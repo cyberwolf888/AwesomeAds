@@ -23,6 +23,15 @@ Route::get('/articles', 'HomeController@articles')->name('articles');
 
 Route::get('/faq', 'HomeController@faq')->name('faq');
 
+Route::get('/placeads', 'HomeController@placeads')->name('ads');
+Route::get('/placeads/{ad}', 'HomeController@placeads')->name('ads');
+Route::post('/placeads', 'HomeController@storeads')->name('ads');
+
+Route::get('/getprice/{type}', 'HomeController@getPrice')->middleware('ajax');
+
+Route::get('/payment/{id}', 'HomeController@payment')->name('payment');
+Route::get('/landing/paypal', 'HomeController@getPaymentStatus')->name('payment.status');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

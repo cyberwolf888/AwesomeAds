@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Awesome Ads | @yield('title')</title>
+    <title>Awesome Ad | @yield('title')</title>
     <link rel="icon" type="image/x-icon" href="{!! asset("/assets/frontend/images/icon/favicon.ico") !!}"/>
+    <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <!--[if lt IE 9]>
     {!! Helper::registerJs("/frontend/js/vendor/html5.js") !!}
     <![endif]-->
@@ -18,7 +19,7 @@
     {!! Helper::registerCss("/frontend/css/general.css") !!}
     <style id="theme-skin-inline-css" type="text/css"></style>
     {!! Helper::registerCss("/frontend/css/responsive.css") !!}
-
+    @stack('page_css')
 </head>
 <body class="page wide top_panel_above top_panel_opacity_solid theme_skin_general usermenu_hide">
 <!--[if lt IE 9]>
@@ -76,80 +77,7 @@
         @yield('content')
 
         <div class="footerContentWrap">
-            <footer class="footerWrap footerStyleDark">
-                <div class="container footerWidget widget_area">
-                    <aside class="col-md-4 col-sm-12 widgetWrap widget widget_text">
-                        <h3 class="title">Follow us</h3>
-                        <div class="textwidget">
-                            <p>Don't miss our news, debates, and inspiring stories. Find us on social networks!
-                            <ul class="sc_social">
-                                <li>
-                                    <a class="social_icons social_facebook" target="_blank" href="http://facebook.com/"> </a>
-                                </li>
-                                <li>
-                                    <a class="social_icons social_pinterest" target="_blank" href="http://pinterest.com/"> </a>
-                                </li>
-                                <li>
-                                    <a class="social_icons social_twitter" target="_blank" href="http://twitter.com/"> </a>
-                                </li>
-                                <li>
-                                    <a class="social_icons social_gplus" target="_blank" href="http://gplus.com/"> </a>
-                                </li>
-                                <li>
-                                    <a class="social_icons social_linkedin" target="_blank" href="http://linkedin.com/"> </a>
-                                </li>
-                                <li>
-                                    <a class="social_icons social_vimeo" target="_blank" href="http://vimeo.com/"> </a>
-                                </li>
-                            </ul>
-                            <p>
-                                <a href="http://themeforest.net/user/axiomthemes/portfolio">Axiom</a>
-                                &copy; 2015 All rights reserved.
-                                <a href="#">Terms of Use</a>
-                                and
-                                <a href="#">Privacy Policy</a>
-                            </p>
-                        </div>
-                    </aside>
-                    <aside class="col-md-4 col-sm-6 widgetWrap widget widget_nav_menu">
-                        <h3 class="title">General Information</h3>
-                        <div class="menu-general-information-container">
-                            <ul id="menu-general-information" class="menu">
-                                <li class="menu-item ">
-                                    <a href="#">Plans &#038; Pricing</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#">Free SEO Tools</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#">Support and FAQ</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#">Blog &#038; Articles</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#">Company &#038; Contact Info</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#">Terms of Service</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#">Privacy Policy</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </aside>
-                    <aside class="col-md-4 col-sm-6 widgetWrap widget widget_text">
-                        <h3 class="title">Request a free quote</h3>
-                        <div class="textwidget">
-                            <p>Looking for SEO consultation?
-                            <div class="sc_button sc_button_style_global sc_button_size_huge squareButton global huge">
-                                <a href="#" class="">SEND REQUEST</a>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </footer>
+            @include('layouts.frontend.footer')
         </div>
     </div>
 </div>
@@ -161,15 +89,15 @@
 {!! Helper::registerJs("/frontend/js/vendor/bootstrap.min.js") !!}
 {!! Helper::registerJs("/frontend/js/custom/_main.js") !!}
 {!! Helper::registerJs("/frontend/js/vendor/_packed.js") !!}
+@stack('plugin_script')
 {!! Helper::registerJs("/frontend/js/custom/shortcodes_init.js") !!}
 {!! Helper::registerJs("/frontend/js/custom/_front.js") !!}
-@stack('plugin_script')
-
-@stack('page_script')
 <script>
     $(document).ready(function() {
         $('.search').hide();
     })
 </script>
+@stack('page_script')
+
 </body>
 </html>

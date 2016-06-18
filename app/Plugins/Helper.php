@@ -130,5 +130,16 @@ class Helper {
         $data.= Helper::registerJs('/global/plugins/jquery-validation/js/additional-methods.min.js');
         return $data;
     }
+
+    public static function convertCurrency($amount,$from,$to)
+    {
+        $c_from = urlencode($from);
+        $c_to = urlencode($to);
+        $url = "http://api.fixer.io/latest?base=$c_to&symbols=$c_from";
+        $result = json_decode(file_get_contents($url));
+        $rate = $result->rates->$from;
+        $convert = round($amount/$rate,2);
+        return $convert;
+    }
     
 }

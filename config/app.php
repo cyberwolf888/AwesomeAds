@@ -151,12 +151,22 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Laravel colective
+         */
+        Collective\Html\HtmlServiceProvider::class,
+
+        /*
+         * Data tables
+         */
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -204,6 +214,17 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Helper' => App\Plugins\Helper::class,
+
+        /*
+         * Laravel colective HTML
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
+        /*
+         * Data tables
+         */
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
     ],
 

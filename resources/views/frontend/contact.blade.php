@@ -86,7 +86,7 @@
 @endsection
 
 @push('plugin_script')
-{!! Helper::registerJs("/frontend/js/custom/_form_contact.html") !!}
+{!! Helper::registerJs("/frontend/js/custom/_form_contact.min.js") !!}
 {!! Helper::registerJs("/frontend/js/vendor/chart.min.js") !!}
 {!! Helper::registerJs("/frontend/js/vendor/diagram.raphael.min.js") !!}
 <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
