@@ -33,4 +33,10 @@ class Ads extends Model
             'payment' => 'required|max:2'
         ]);
     }
+
+    public static function getLabelPayment($payment)
+    {
+        $label = [Ads::P_CASH=>'Cash',Ads::P_PAYPAL=>'PayPal'];
+        return $label[$payment];
+    }
 }

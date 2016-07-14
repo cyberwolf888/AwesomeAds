@@ -37,3 +37,15 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/sendemail', 'HomeController@sendemail');
+
+
+//Admin routes
+Route::group(['middleware' => 'auth', 'as' => 'master', 'prefix' => 'master'], function () {
+    Route::get('/', function ()    {
+        // Uses Auth Middleware
+    });
+
+    Route::get('user/profile', function () {
+        // Uses Auth Middleware
+    });
+});

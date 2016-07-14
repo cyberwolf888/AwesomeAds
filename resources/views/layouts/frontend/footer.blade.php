@@ -38,32 +38,23 @@
             <div class="menu-general-information-container">
                 <ul id="menu-general-information" class="menu">
                     <li class="menu-item ">
-                        <a href="#">Plans &#038; Pricing</a>
+                        <a href="{{ route('pricing') }}">Plans &#038; Pricing</a>
                     </li>
                     <li class="menu-item ">
-                        <a href="#">Support and FAQ</a>
+                        <a href="{{ route('faq') }}">Support and FAQ</a>
                     </li>
                     <li class="menu-item ">
-                        <a href="#">Blog &#038; Articles</a>
-                    </li>
-                    <li class="menu-item ">
-                        <a href="#">Company &#038; Contact Info</a>
-                    </li>
-                    <li class="menu-item ">
-                        <a href="#">Terms of Service</a>
-                    </li>
-                    <li class="menu-item ">
-                        <a href="#">Privacy Policy</a>
+                        <a href="{{ route('contact') }}">Company &#038; Contact Info</a>
                     </li>
                 </ul>
             </div>
         </aside>
         <aside class="col-md-4 col-sm-6 widgetWrap widget widget_text">
-            <h3 class="title">Request a free quote</h3>
+            <h3 class="title">Advertisement</h3>
             <div class="textwidget">
                 <p>Looking for advertisement?
                 <div class="sc_button sc_button_style_global sc_button_size_huge squareButton global huge">
-                    <a href="#" class="">SEND REQUEST</a>
+                    <a href="{{ route('ads') }}" class="">SEND REQUEST</a>
                 </div>
             </div>
         </aside>

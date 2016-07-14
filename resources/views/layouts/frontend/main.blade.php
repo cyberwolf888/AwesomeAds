@@ -18,6 +18,7 @@
     <style id="theme-skin-inline-css" type="text/css"></style>
     {!! Helper::registerCss("/frontend/css/responsive.css") !!}
     @stack('plugin_css')
+    @stack('page_css')
 </head>
 <body class="home page wild top_panel_above top_panel_opacity_transparent theme_skin_general usermenu_show">
 <!--[if lt IE 9]>

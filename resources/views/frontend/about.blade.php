@@ -30,7 +30,7 @@
 <span class="sc_highlight sc_highlight_style_7">
 Short story about our company
 </span>
-                <p class="no_padding">Producing long lasting organic SEO results for brands of different kinds for more than a decade, we understand that your company is unique. That is why we approach to each of the projects individually, and we come up with smart solutions and put our technology to work to make us the most efficient among all other SEO agencies. We have been on web marketing for 12 years helping you compete on Internet and converting your visitors into your clients.</p>
+                <p class="no_padding">Anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam.</p>
             </div>
         </div>
     </div>

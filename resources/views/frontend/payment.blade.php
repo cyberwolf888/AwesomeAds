@@ -55,9 +55,9 @@
       </div>
    </section>
 
-   @if($ads->payment == $ads::P_CASH)
       <section class="light_section">
          <div class="container">
+            @if($ads->payment == $ads::P_CASH)
             <div class="row">
                <div class="col-md-12 col-sm-12">
 
@@ -66,6 +66,7 @@
                   </div>
                </div>
             </div>
+            @endif
             <div class="row">
                <div class="col-xs-12">
                   <div class="text-center">
@@ -88,8 +89,8 @@
                         <div class="panel panel-default height">
                            <div class="panel-heading">Payment Information</div>
                            <div class="panel-body">
-                              <strong>Payment Method:</strong> Cash<br>
-                              <strong>Payment Status:</strong> {{ \App\Models\Ads::L_STATUS[$ads->status] }}<br>
+                              <strong>Payment Method:</strong> {{ \App\Models\Ads::getLabelPayment($ads->payment) }}<br>
+                              <strong>Payment Status:</strong> @if($ads->status == \App\Models\Ads::S_PAID) <b style="color: green;">{{ \App\Models\Ads::L_STATUS[$ads->status] }}</b> @else <b style="color: red;">{{ \App\Models\Ads::L_STATUS[$ads->status] }}</b> @endif <br>
                            </div>
                         </div>
                      </div>
@@ -155,6 +156,5 @@
             </div>
          </div>
       </section>
-   @endif
 
 @endsection

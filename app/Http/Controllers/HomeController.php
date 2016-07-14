@@ -154,7 +154,7 @@ class HomeController extends Controller
 
     public function getPrice($type)
     {
-        $price = Price::where('type',1)->first();
+        $price = Price::where('type',$type)->first();
         return $price->price;
     }
 
@@ -236,7 +236,7 @@ class HomeController extends Controller
             return redirect()->route('home')
                 ->with('error', 'Unknown error occurred');
         }else{
-            return redirect()->route('home');
+            return view('frontend.payment',['ads'=>$ads,'type'=>$ads_type]);
         }
     }
 
@@ -246,6 +246,7 @@ class HomeController extends Controller
         $payment_id = session()->get('paypal_payment_id');
 
         $ads = Ads::findOrFail($ads_id);
+        $ads_type = AdsType::findOrFail($ads->type);
 
         if (empty($request->PayerID) || empty($request->token)) {
             return redirect()->route('original.route')
@@ -276,9 +277,10 @@ class HomeController extends Controller
             session()->forget('ads_id');;
             $ads->status = $ads::S_PAID;
             $ads->save();
-            return "success";
+            //return view('frontend.payment',['ads'=>$ads,'type'=>$ads_type]);
+            return redirect()->route('payment', [Crypt::encrypt($ads->id)]);
         }
-        return "failed";
+        return view('frontend.payment_failed',['ads'=>$ads]);
         /*
         return redirect()->route('home')
             ->with('error', 'Payment failed');

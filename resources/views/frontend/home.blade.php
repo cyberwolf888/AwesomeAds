@@ -32,8 +32,8 @@
                             </div>
                             <div class="tp-caption _text lfr tp-resizeme rs-parallaxlevel-0" data-x="681" data-y="391" data-speed="300" data-start="2000" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
                                 <div class="tp-layer-inner-rotation _text  rs-slideloop" data-easing="Power3.easeInOut" data-speed="2" data-xs="0" data-xe="0" data-ys="0" data-ye="0">
-                                    <a href='#' class='button-action red' data-text='FREE SEO REVIEW'>
-                                        <span>FREE SALES REVIEW</span>
+                                    <a href='{{ route('pricing') }}' class='button-action red' data-text='LEARN MORE'>
+                                        <span>NO HIDDEN FEE</span>
                                     </a>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                                 Fast and Affordable
                             </div>
                             <div class="tp-caption _text lfl tp-resizeme rs-parallaxlevel-0" data-x="116" data-y="371" data-speed="300" data-start="1500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">
-                                <a href='#' class='button-action darkgrey big' data-text='GET IT NOW!'>
+                                <a href='{{ route('ads') }}' class='button-action darkgrey big' data-text='GET IT NOW!'>
                                     <span>GET IT NOW!</span>
                                 </a>
                             </div>
@@ -183,7 +183,7 @@
                             <div class="col-sm-12">
                                 <div class="text-center animated">
                                     <div class="sc_button margin_top_big sc_button_style_dark sc_button_size_banner squareButton dark banner">
-                                        <a href="#" class="">Start my Free 30-Day Trial</a>
+                                        <a href="{{ route('pricing') }}" class="">Start my Plan</a>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
                                     <h3 class="sc_title sc_title_regular">Advertisement (Ads)</h3>
                                     <div class="sc_section bg_tint_none text-center">
                                     <span class="sc_highlight">
-                                        Is the science of adjusting a website&#8217;s code, content and structure to make it visible on a search engine result page for particular keywords or combinations of keywords. The end-goal in any marketing venture is to generate a return on your investment, and Advertisement is capable of generating very attractive returns by bringing people to your website through search engines!
+                                        Advertising is a means of communication with the users of a product or service. Advertisements are messages paid for by those who send them and are intended to inform or influence people who receive them.
                                     </span>
                                     </div>
                                 </div>
@@ -225,7 +225,7 @@
                                                 </h4>
                                                 <div class="sc_section bg_tint_none">
 <span class="sc_highlight sc_highlight_style_3">
-We will check up to 200 pages for broken links, images, missing anchors and other issues.
+We will check up every issues pages for broken images, missing anchors and other problem.
 </span>
                                                 </div>
                                             </div>
@@ -287,25 +287,13 @@ Get insights about your internal link texts and page authority metrics for up to
                                             <div class="text-left margin_bottom_big">
                                                 <div class="sc_title_icon sc_title_left sc_size_mini icon-record"></div>
                                                 <h4 class="sc_title sc_title_iconed">
-                                                    <a href="#">Paid Google Advertising</a>
+                                                    <a href="#">Sales Booster</a>
                                                 </h4>
                                                 <div class="sc_section bg_tint_none">
 <span class="sc_highlight sc_highlight_style_3">
-Get insights about your internal link texts and page authority metrics for up to 1000 pages.
+Get insights about your sales and boost them.
 </span>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="animated text-center margin_top_small">
-                                            <div class="sc_button sc_button_style_global sc_button_size_big squareButton global big  ico">
-                                                <a href="#" class="inherit">Get a quote</a>
-                                            </div>
-                                            <div class="sc_button sc_button_style_global sc_button_size_big squareButton global big  ico">
-                                                <a href="#" class="inherit">Learn More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -349,7 +337,7 @@ Get insights about your internal link texts and page authority metrics for up to
                                         </li>
                                     </ul>
                                     <div class="sc_button sc_button_style_global sc_button_size_huge squareButton global huge margin_top_small">
-                                        <a href="#" class="">Sign Up Free!</a>
+                                        <a href="{{ route('ads') }}" class="">Get It Now!</a>
                                     </div>
                                 </div>
                             </div>

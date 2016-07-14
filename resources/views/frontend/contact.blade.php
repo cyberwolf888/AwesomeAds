@@ -29,8 +29,7 @@
                             <h1 class="sc_title sc_title_regular">
                                 Stay in Touch
                             </h1>
-                            <div>Lorem ipsum dolor sit amet, has facer euismod hendrerit cu. Ei zril aliquid iudicabit has, et duo tollit oportere. Ex eos admodum accumsan prodesset, vel ex accusam accusamus. Zril integre voluptua vis ea, labore conclusionemque te vim. Ei suas vivendum neglegentur vel, ipsum aliquam has ne.<br/>
-                                Nulla facilisi. Phasellus auctor tortor in libero fermentum, at fringilla lectus porta. In hac habitasse platea dictumst. Aenean tristique ante a enim aliquam eleifend. </div>
+                            <div>Anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam. </div>
                         </div>
                     </div>
                 </div>
