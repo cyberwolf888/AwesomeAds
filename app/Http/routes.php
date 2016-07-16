@@ -40,12 +40,7 @@ Route::get('/sendemail', 'HomeController@sendemail');
 
 
 //Admin routes
-Route::group(['middleware' => 'auth', 'as' => 'master', 'prefix' => 'master'], function () {
-    Route::get('/', function ()    {
-        // Uses Auth Middleware
-    });
+Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], function () {
+    Route::get('/','Master\DashboardController@index')->name('dashboard');
 
-    Route::get('user/profile', function () {
-        // Uses Auth Middleware
-    });
 });
