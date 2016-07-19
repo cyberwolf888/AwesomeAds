@@ -1,13 +1,13 @@
 <div class="menu_section">
     <ul>
         <li title="Dashboard" class="@if(Route::currentRouteName()=='master.dashboard') current_section @endif">
-            <a href="index-2.html">
+            <a href="{{ route('master.dashboard') }}">
                 <span class="menu_icon"><i class="material-icons">&#xE871;</i></span>
                 <span class="menu_title">Dashboard</span>
             </a>
         </li>
-        <li title="Inquiry" class="@if(Route::currentRouteName()=='master.inquiry') current_section @endif">
-            <a href="page_mailbox.html">
+        <li title="Inquiry" class="@if(str_is('*.inquiry.*', Route::currentRouteName())) current_section @endif">
+            <a href="{{ route('master.inquiry.index') }}">
                 <span class="menu_icon"><i class="material-icons">&#xE8B0;</i></span>
                 <span class="menu_title">Inquiry</span>
             </a>

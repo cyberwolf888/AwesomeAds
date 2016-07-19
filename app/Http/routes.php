@@ -43,4 +43,7 @@ Route::get('/sendemail', 'HomeController@sendemail');
 Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], function () {
     Route::get('/','Master\DashboardController@index')->name('dashboard');
 
+    Route::group(['as' => 'inquiry.', 'prefix' => 'inquiry'], function () {
+        Route::get('/','Master\InquiryController@index')->name('index');
+    });
 });
