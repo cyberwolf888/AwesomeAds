@@ -45,5 +45,8 @@ Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], 
 
     Route::group(['as' => 'inquiry.', 'prefix' => 'inquiry'], function () {
         Route::get('/','Master\InquiryController@index')->name('index');
+        Route::get('/detail/{id}','Master\InquiryController@show')->name('detail');
+        Route::get('/download/{id}','Master\InquiryController@downloadDesign')->name('download');
+        Route::get('/confirm/{id}','Master\InquiryController@confirm')->name('confirm');
     });
 });

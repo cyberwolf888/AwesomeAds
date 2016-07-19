@@ -30,12 +30,16 @@
     <!-- themes -->
     {!! Helper::registerCss("/master/css/themes/themes_combined.min.css") !!}
 
+    @stack('plugin_css')
+
     <!-- matchMedia polyfill for testing media queries in JS -->
     <!--[if lte IE 9]>
     {!! Helper::registerJs("/master/bower_components/matchMedia/matchMedia.js") !!}
     {!! Helper::registerJs("/master/bower_components/matchMedia/matchMedia.addListener.js") !!}
     {!! Helper::registerCss("/master/css/ie.css") !!}
     <![endif]-->
+
+    @stack('page_css')
 
 </head>
 <body class=" sidebar_main_open sidebar_main_swipe">
@@ -171,7 +175,9 @@
 <!-- altair common functions/helpers -->
 {!! Helper::registerJs("/master/js/altair_admin_common.min.js") !!}
 
+@stack('plugin_script')
 
+@stack('page_script')
 <script>
     $(function() {
         if(isHighDensity) {
@@ -188,5 +194,5 @@
         altair_helpers.ie_fix();
     });
 </script>
-
+</body>
 </html>

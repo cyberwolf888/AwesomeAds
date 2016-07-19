@@ -12,4 +12,9 @@ class AdsType extends Model
     {
         return $this->hasOne('App\Models\Price', 'type');
     }
+
+    public function ads()
+    {
+        return $this->hasMany('App\Models\Ads', 'type');
+    }
 }

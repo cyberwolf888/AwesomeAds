@@ -39,4 +39,14 @@ class Ads extends Model
         $label = [Ads::P_CASH=>'Cash',Ads::P_PAYPAL=>'PayPal'];
         return $label[$payment];
     }
+
+    public function design()
+    {
+        return $this->hasMany('App\Models\Design', 'id_ads');
+    }
+
+    public function adtype()
+    {
+        return $this->belongsTo('App\Models\AdsType', 'type');
+    }
 }

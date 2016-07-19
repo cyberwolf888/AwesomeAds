@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Master;
 
+use App\Models\Ads;
+use App\Models\Design;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -9,70 +11,33 @@ use App\Http\Controllers\Controller;
 
 class InquiryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('master.inquiry.index');
+        $ads = Ads::all();
+        return view('master.inquiry.index',['ads'=>$ads]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $ads = Ads::with('design','adtype')->findOrFail($id);
+        return view('master.inquiry.detail',['ads'=>$ads]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function downloadDesign($id)
     {
-        //
+        $design = Design::findOrFail($id);
+        return response()->download($design->PATH_IMG.'/'.$design->image);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function confirm($id)
     {
-        //
+        $ads = Ads::findOrFail($id);
+        $ads->status = Ads::S_PAID;
+        $ads->save();
+        return redirect()->back();
     }
+
 
     /**
      * Remove the specified resource from storage.

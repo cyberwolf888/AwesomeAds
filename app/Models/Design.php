@@ -23,4 +23,9 @@ class Design extends Model
             'image' => 'mimes:png,gif,jpeg,jpg,psd,pdf,ai|max:5500'
         ]);
     }
+
+    public function ads()
+    {
+        return $this->belongsTo('App\MOdels\Ads', 'id_ads');
+    }
 }
