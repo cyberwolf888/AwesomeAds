@@ -12,8 +12,8 @@
                 <span class="menu_title">Inquiry</span>
             </a>
         </li>
-        <li title="Price" class="@if(Route::currentRouteName()=='master.price') current_section @endif">
-            <a href="page_invoices.html">
+        <li title="Price" class="@if(str_is('*.price.*', Route::currentRouteName())) current_section @endif">
+            <a href="{{ route('master.price.index') }}">
                 <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
                 <span class="menu_title">Price</span>
             </a>

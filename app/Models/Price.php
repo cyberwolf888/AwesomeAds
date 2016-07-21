@@ -10,6 +10,6 @@ class Price extends Model
 
     public function ads_type()
     {
-        return $this->belongsTo('App\Models\Price', 'type');
+        return $this->belongsTo('App\Models\AdsType', 'type');
     }
 }

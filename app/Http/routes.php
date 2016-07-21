@@ -49,4 +49,7 @@ Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], 
         Route::get('/download/{id}','Master\InquiryController@downloadDesign')->name('download');
         Route::get('/confirm/{id}','Master\InquiryController@confirm')->name('confirm');
     });
+    Route::group(['as' => 'price.', 'prefix' => 'price'], function () {
+        Route::get('/','Master\PriceController@index')->name('index');
+    });
 });

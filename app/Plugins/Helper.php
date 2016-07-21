@@ -141,6 +141,11 @@ class Helper {
         $convert = round($amount/$rate,2);
         return $convert;
     }
+
+    public static function formatMoney($money)
+    {
+        return "Rp. ".number_format($money,0,',','.');
+    }
     public static function FileSizeConvert($bytes)
     {
         $bytes = floatval($bytes);

@@ -47,11 +47,11 @@
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->issues }}</td>
                                 <td>{{ $data->words }}</td>
-                                <td>Rp. {{ number_format($data->total,0,',','.') }}</td>
+                                <td>{{ Helper::formatMoney($data->total) }}</td>
                                 <td><span class="@if($data->status == 2) md-color-light-green-800 @else md-color-light-blue-A700 @endif">{{ \App\Models\Ads::L_STATUS[$data->status] }}</span></td>
                                 <td>{{ date('d F Y',strtotime($data->created_at)) }}</td>
                                 <td class="uk-text-center">
-                                    <a href="{{ route('master.inquiry.detail',['id'=>$data->id]) }}" target="_blank" class="ts_remove_row "><i class="md-icon material-icons md-color-light-blue-800">find_in_page</i></a>
+                                    <a href="{{ route('master.inquiry.detail',['id'=>$data->id]) }}" target="_blank" class="ts_remove_row "><i class="md-icon material-icons md-color-light-blue-A700">find_in_page</i></a>
                                 </td>
                             </tr>
                         @endforeach
