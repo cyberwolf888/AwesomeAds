@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Jun 2016 pada 06.18
+-- Generation Time: 24 Jul 2016 pada 07.43
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -49,7 +49,7 @@ CREATE TABLE `ads` (
 --
 
 INSERT INTO `ads` (`id`, `type`, `name`, `phone`, `email`, `issues`, `ad_content`, `words`, `note`, `cost`, `total`, `payment`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'adas asdasd as asd asd asd as d', 8, NULL, 13000, 104000, 'CH', 1, '2016-06-14 23:30:35', '2016-06-14 23:30:35'),
+(1, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'adas asdasd as asd asd asd as d', 8, NULL, 13000, 104000, 'CH', 2, '2016-06-14 23:30:35', '2016-07-19 12:00:00'),
 (2, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah bedebah ', 48, NULL, 13000, 624000, 'PP', 1, '2016-06-14 23:32:14', '2016-06-14 23:32:14'),
 (3, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'asdasd ad asda asa asdqweq ', 5, NULL, 13000, 65000, 'PP', 1, '2016-06-15 00:34:22', '2016-06-15 00:34:22'),
 (4, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'asd asd sa dsa d asd as das d as das d as dsa d asd sa d', 18, NULL, 13000, 234000, 'PP', 1, '2016-06-15 11:53:58', '2016-06-15 11:53:58'),
@@ -57,7 +57,9 @@ INSERT INTO `ads` (`id`, `type`, `name`, `phone`, `email`, `issues`, `ad_content
 (6, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'asd asd sa dsa d asd as das d as das d as dsa d asd sa d', 18, NULL, 13000, 234000, 'PP', 1, '2016-06-15 12:11:42', '2016-06-15 12:11:42'),
 (7, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'asd as asdasdasd', 3, NULL, 13000, 39000, 'PP', 1, '2016-06-15 12:22:21', '2016-06-15 12:22:21'),
 (8, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'qwe qwe wqe wq wq wqe wq', 7, NULL, 13000, 91000, 'PP', 1, '2016-06-15 12:32:57', '2016-06-15 12:32:57'),
-(9, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'gfhf fgh gh', 3, NULL, 13000, 39000, 'PP', 1, '2016-06-15 12:37:23', '2016-06-15 12:37:23');
+(9, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'gfhf fgh gh', 3, NULL, 13000, 39000, 'PP', 1, '2016-06-15 12:37:23', '2016-06-15 12:37:23'),
+(10, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 2, 'tes testest ests tsetssdf sdfsdfsd sdfsdfsdfs', 6, NULL, 13000, 156000, 'PP', 2, '2016-07-14 04:40:04', '2016-07-14 04:41:58'),
+(11, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 3, 'test ads ha ha aha aha aha aha aha aha aha', 11, NULL, 13000, 429000, 'PP', 2, '2016-07-14 04:53:36', '2016-07-14 04:54:09');
 
 -- --------------------------------------------------------
 
@@ -106,7 +108,8 @@ INSERT INTO `design` (`id`, `id_ads`, `image`, `created_at`, `updated_at`) VALUE
 (1, 2, '2LDr2KGcY4c.jpg', '2016-06-14 23:32:14', '2016-06-14 23:32:14'),
 (2, 2, '2liez8sdVtc.jpg', '2016-06-14 23:32:14', '2016-06-14 23:32:14'),
 (3, 2, '2tWpkmqFtcL.jpg', '2016-06-14 23:32:14', '2016-06-14 23:32:14'),
-(4, 3, '36V5kCY64np.jpg', '2016-06-15 00:34:22', '2016-06-15 00:34:22');
+(4, 3, '36V5kCY64np.jpg', '2016-06-15 00:34:22', '2016-06-15 00:34:22'),
+(5, 10, '1048PrpTYv4H.jpg', '2016-07-14 04:40:04', '2016-07-14 04:40:04');
 
 -- --------------------------------------------------------
 
@@ -159,7 +162,9 @@ CREATE TABLE `price` (
 --
 
 INSERT INTO `price` (`id`, `type`, `based`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, 'WC', 13000, '2016-06-14 08:23:06', NULL);
+(1, 1, 'WC', 13000, '2016-06-14 08:23:06', NULL),
+(2, 3, 'WC', 11000, '2016-07-14 13:37:23', NULL),
+(3, 4, 'WC', 8000, '2016-07-14 13:38:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -182,7 +187,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'admin@mail.com', '$2y$10$YFx7N1qutoX/R8VdMR9hq.2KgPQKYDHEWqUZsq9sDrnqm4aiUIbdW', 'FPpYpYqozR8v4oNeC8jKN0D3B3EALcujQ68jAu8cTzjHx1PB5FD6YhRIaflD', '2016-06-11 08:03:00', '2016-06-11 08:04:15');
+(1, 'Administrator', 'admin@mail.com', '$2y$10$0xY.bmLCVURnC8pdZrK2juPaaJsfCn93sdZnVutdVUZQOKOanKMXS', 'FPpYpYqozR8v4oNeC8jKN0D3B3EALcujQ68jAu8cTzjHx1PB5FD6YhRIaflD', '2016-06-11 08:03:00', '2016-06-11 08:04:15'),
+(2, 'Master', 'master@mail.com', '$2y$10$0xY.bmLCVURnC8pdZrK2juPaaJsfCn93sdZnVutdVUZQOKOanKMXS', 'TtCZhtvPwUAubKx5ICRh5V3lodEeZGzNDERf5Y7NWg9qKpHApesrcPwToCBa', '2016-07-14 07:15:59', '2016-07-14 07:16:51');
 
 --
 -- Indexes for dumped tables
@@ -234,7 +240,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `ads_type`
 --
@@ -244,17 +250,17 @@ ALTER TABLE `ads_type`
 -- AUTO_INCREMENT for table `design`
 --
 ALTER TABLE `design`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
