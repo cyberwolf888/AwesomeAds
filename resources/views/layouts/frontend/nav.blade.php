@@ -9,9 +9,11 @@
         <li class="menu-item {{ Route::currentRouteName()=='ads' ? 'current-menu-item current_page_item menu-item-home' : '' }}">
             <a href="{!! url('/placeads') !!}">Place An Ad</a>
         </li>
+        <!--
         <li class="menu-item {{ Route::currentRouteName()=='articles' ? 'current-menu-item current_page_item menu-item-home' : '' }}">
             <a href="{!! url('/articles') !!}">Articles</a>
         </li>
+        -->
         <li class="menu-item {{ Route::currentRouteName()=='about' ? 'current-menu-item current_page_item menu-item-home' : '' }}">
             <a href="{!! url('/about') !!}">About Us</a>
         </li>

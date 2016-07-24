@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Master;
 
-use App\Models\Ads;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,25 +17,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $current_date = date('Y-m-d');
-        $last_week = date('Y-m-d', strtotime("-1 week", strtotime($current_date)));
-        $total = Ads::count();
-        $total_inquiry = Ads::whereRaw("(DATE_FORMAT(created_at,'%Y%c%d') BETWEEN DATE_FORMAT('$last_week','%Y%c%d') AND DATE_FORMAT('$current_date','%Y%c%d'))")->count();
-        $total_sales = Ads::select(DB::raw("sum(total) as total_sales"))
-            ->whereRaw("(DATE_FORMAT(created_at,'%Y%c%d') BETWEEN DATE_FORMAT('$last_week','%Y%c%d') AND DATE_FORMAT('$current_date','%Y%c%d')) AND status='2'")
-            ->first();
-        $total_paid = Ads::where('status','2')->count();
-        $last_ads = Ads::orderBy('created_at','DESC')
-            ->limit(5)
-            ->get();
-
-        return view('master.dashboard.index',[
-            'total'=>$total,
-            'total_inquiry'=>$total_inquiry,
-            'total_sales'=>$total_sales->total_sales,
-            'total_paid'=>$total_paid,
-            'last_ads'=>$last_ads
-        ]);
+        $model = Auth::user();
+        return view('master.profile.form',['model'=>$model]);
     }
 
     /**
@@ -57,7 +39,17 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = Auth::user();
+        $model->email = $request->email;
+        if(isset($request->password)){
+            $model->password = bcrypt($request->password);
+        }
+        if($model->save()){
+            return redirect()->back()->with('success', 'Your Profile successfully updated!');
+        }else{
+            return redirect()->back()->with('error', 'Failed to update your profile.');
+        }
+
     }
 
     /**

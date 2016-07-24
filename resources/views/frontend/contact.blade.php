@@ -40,7 +40,8 @@
                         <div class="col-md-8 col-sm-12">
                             <div class="sc_contact_form sc_contact_form_contact_1">
                                 <h1 class="title">Send Us a Message</h1>
-                                <form class="contact_1" method="post" action="http://seo-html.axiomthemes.com/include/contact-form.php">
+                                <form id="contact_form" class="contact_1" method="post" action="{{ route('send_contact') }}">
+                                    {{ csrf_field() }}
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <input type="text" name="name" id="sc_contact_form_username" placeholder="Name">

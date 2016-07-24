@@ -6,7 +6,7 @@
     <div id="page_content">
         <div id="page_content_inner">
 
-            <h3 class="heading_b uk-margin-bottom">Form Validation</h3>
+            <h3 class="heading_b uk-margin-bottom">Form Price</h3>
 
             <div class="md-card">
                 <div class="md-card-content large-padding">

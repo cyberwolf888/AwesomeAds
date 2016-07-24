@@ -10,6 +10,22 @@
 
             <div class="md-card uk-margin-medium-bottom">
                 <div class="md-card-content">
+                    @if ( session()->has('success') )
+                        <div class="uk-width-1-1 uk-row-first">
+                            <div class="uk-alert uk-alert-success" data-uk-alert="">
+                                <a href="#" class="uk-alert-close uk-close"></a>
+                                {{ session()->get('success') }}
+                            </div>
+                        </div>
+                    @endif
+                    @if ( session()->has('error') )
+                        <div class="uk-width-1-1 uk-row-first">
+                            <div class="uk-alert uk-alert-danger" data-uk-alert="">
+                                <a href="#" class="uk-alert-close uk-close"></a>
+                                {{ session()->get('error') }}
+                            </div>
+                        </div>
+                    @endif
                     <table id="dt_individual_search" class="uk-table uk-table-hover" cellspacing="0" width="100%">
                         <thead>
                         <tr>

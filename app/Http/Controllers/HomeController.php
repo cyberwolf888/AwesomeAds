@@ -306,4 +306,9 @@ class HomeController extends Controller
 
         return "Your email has been sent successfully";
     }
+
+    public function sendContact(Request $request)
+    {
+        dd($request->all());
+    }
 }

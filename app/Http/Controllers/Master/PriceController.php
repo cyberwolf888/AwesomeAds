@@ -51,7 +51,7 @@ class PriceController extends Controller
             $price->price = $request->price;
             $price->based = 'WC';
             if($price->save()){
-                return redirect()->route('master.price.index');
+                return redirect()->route('master.price.index')->with('success', 'Data successfully added!');
             }
         }
     }
@@ -98,7 +98,7 @@ class PriceController extends Controller
             $price->price = $request->price;
             $price->based = 'WC';
             if($price->save()){
-                return redirect()->route('master.price.index');
+                return redirect()->route('master.price.index')->with('success', 'Data successfully updated!');
             }
         }
     }

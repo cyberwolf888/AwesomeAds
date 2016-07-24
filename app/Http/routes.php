@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/pricing', 'HomeController@pricing')->name('pricing');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::post('/contact', 'HomeController@sendContact')->name('send_contact');
 
 Route::get('/about', 'HomeController@about')->name('about');
 
@@ -56,5 +57,9 @@ Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], 
         Route::get('/edit/{id}','Master\PriceController@edit')->name('edit');
         Route::post('/edit/{id}','Master\PriceController@update')->name('update');
         Route::get('/delete/{id}','Master\PriceController@destroy')->name('delete');
+    });
+    Route::group(['as' => 'profile.', 'prefix' => 'profile'], function () {
+        Route::get('/','Master\ProfileController@index')->name('edit');
+        Route::post('/','Master\ProfileController@store')->name('store');
     });
 });

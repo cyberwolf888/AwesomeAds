@@ -44,7 +44,7 @@ function userSubmitForm(e,c,d){
         })
     }
     if(!b&&c!="#"){
-        document.getElementById("adsForm").submit();
+        document.getElementById("contact_form").submit();
     }
 }
 
