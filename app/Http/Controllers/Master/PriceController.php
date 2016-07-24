@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Master;
 
+use App\Models\AdsType;
 use App\Models\Price;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,9 @@ class PriceController extends Controller
      */
     public function create()
     {
-        return view('master.price.form');
+        $price = new Price();
+        $ad_type = new AdsType();
+        return view('master.price.form',['price'=>$price,'ad_type'=>$ad_type]);
     }
 
     /**
@@ -39,7 +42,18 @@ class PriceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $price = new Price();
+        $ad_type = new AdsType();
+        $ad_type->label = $request->label;
+        $ad_type->description = $request->description;
+        if($ad_type->save()){
+            $price->type = $ad_type->id;
+            $price->price = $request->price;
+            $price->based = 'WC';
+            if($price->save()){
+                return redirect()->route('master.price.index');
+            }
+        }
     }
 
     /**
@@ -61,7 +75,9 @@ class PriceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $price = Price::findOrFail($id);
+        $ad_type = AdsType::findOrFail($price->type);
+        return view('master.price.form',['price'=>$price,'ad_type'=>$ad_type]);
     }
 
     /**
@@ -73,7 +89,18 @@ class PriceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $price = Price::findOrFail($id);
+        $ad_type = AdsType::findOrFail($price->type);
+        $ad_type->label = $request->label;
+        $ad_type->description = $request->description;
+        if($ad_type->save()){
+            $price->type = $ad_type->id;
+            $price->price = $request->price;
+            $price->based = 'WC';
+            if($price->save()){
+                return redirect()->route('master.price.index');
+            }
+        }
     }
 
     /**
@@ -84,6 +111,12 @@ class PriceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $price = Price::findOrFail($id);
+        $ad_type = AdsType::findOrFail($price->type);
+
+        $price->delete();
+        $ad_type->delete();
+
+        return redirect()->back();
     }
 }

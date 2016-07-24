@@ -14,7 +14,6 @@
                         <thead>
                         <tr>
                             <th>Ad Type</th>
-                            <th>Based</th>
                             <th>Price</th>
                             <th>Description</th>
                             <th>Created At</th>
@@ -25,7 +24,6 @@
                         <tfoot>
                         <tr>
                             <th>Ad Type</th>
-                            <th>Based</th>
                             <th>Price</th>
                             <th>Description</th>
                             <th>Created At</th>
@@ -37,12 +35,12 @@
                         @foreach($price as $data)
                             <tr>
                                 <td>{{ $data->ads_type->label }}</td>
-                                <td>{{ $data->based }}</td>
                                 <td>{{ Helper::formatMoney($data->price) }}</td>
                                 <td>{{ substr($data->ads_type->description, 0, 30) }}...</td>
                                 <td>{{ date('d F Y',strtotime($data->created_at)) }}</td>
                                 <td class="uk-text-center">
-                                    <a href="{{ route('master.inquiry.detail',['id'=>$data->id]) }}" target="_blank" class="ts_remove_row "><i class="md-icon material-icons md-color-light-blue-A700">find_in_page</i></a>
+                                    <a href="{{ route('master.price.edit',['id'=>$data->id]) }}" class="ts_remove_row "><i class="md-icon material-icons md-color-light-blue-A700">mode_edit</i></a>
+                                    <a href="javascript:0;" class="ts_remove_row delete" onclick="confirmmation('{{ route('master.price.delete',['id'=>$data->id]) }}')"><i class="md-icon material-icons md-color-red-A700">delete</i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -89,7 +87,6 @@
                         var a=t.DataTable({
                             "columns": [
                                 {"name":"label"},
-                                {"name":"based"},
                                 {"name":"price"},
                                 {"name":"description"},
                                 {"name":"created_at"},
@@ -104,5 +101,15 @@
                     }
                 }
             };
+</script>
+<script>
+    function confirmmation(url){
+        var r = confirm("Are you sure to delete this price?");
+        if (r == true) {
+            window.location = url;
+        } else {
+            return false;
+        }
+    }
 </script>
 @endpush

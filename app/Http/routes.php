@@ -52,5 +52,9 @@ Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], 
     Route::group(['as' => 'price.', 'prefix' => 'price'], function () {
         Route::get('/','Master\PriceController@index')->name('index');
         Route::get('/create','Master\PriceController@create')->name('create');
+        Route::post('/create','Master\PriceController@store')->name('store');
+        Route::get('/edit/{id}','Master\PriceController@edit')->name('edit');
+        Route::post('/edit/{id}','Master\PriceController@update')->name('update');
+        Route::get('/delete/{id}','Master\PriceController@destroy')->name('delete');
     });
 });
