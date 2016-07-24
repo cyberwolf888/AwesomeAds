@@ -51,5 +51,6 @@ Route::group(['middleware' => 'auth', 'as' => 'master.', 'prefix' => 'master'], 
     });
     Route::group(['as' => 'price.', 'prefix' => 'price'], function () {
         Route::get('/','Master\PriceController@index')->name('index');
+        Route::get('/create','Master\PriceController@create')->name('create');
     });
 });

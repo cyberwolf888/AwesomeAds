@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class="md-fab-wrapper">
-        <a class="md-fab md-fab-accent md-fab-wave-light" href="javascript:void(0)" data-uk-tooltip="{pos:'right'}" title="Add New Price">
+        <a class="md-fab md-fab-accent md-fab-wave-light" href="{{ route('master.price.create') }}" data-uk-tooltip="{pos:'right'}" title="Add New Price">
             <i class="material-icons">&#xE145;</i>
         </a>
     </div>

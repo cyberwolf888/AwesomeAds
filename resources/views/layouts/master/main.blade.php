@@ -18,9 +18,6 @@
     <!-- uikit -->
     {!! Helper::registerCss("/master/bower_components/uikit/css/uikit.almost-flat.min.css") !!}
 
-    <!-- flag icons -->
-    {!! Helper::registerCss("/master/icons/flags/flags.min.css") !!}
-
     <!-- style switcher -->
     {!! Helper::registerCss("/master/css/style_switcher.min.css") !!}
 
