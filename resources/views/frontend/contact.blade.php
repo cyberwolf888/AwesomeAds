@@ -40,6 +40,11 @@
                         <div class="col-md-8 col-sm-12">
                             <div class="sc_contact_form sc_contact_form_contact_1">
                                 <h1 class="title">Send Us a Message</h1>
+                                @if ( session()->has('success') )
+                                    <div class="result sc_infobox sc_infobox_style_success" style="display: block;">
+                                        {{ session()->get('success') }}
+                                    </div>
+                                @endif
                                 <form id="contact_form" class="contact_1" method="post" action="{{ route('send_contact') }}">
                                     {{ csrf_field() }}
                                     <div class="row">

@@ -144,7 +144,7 @@ class HomeController extends Controller
 
             }
 
-            $this->sendemail($model->email);
+            $this->sendemail($model);
             return redirect()->route('payment', [Crypt::encrypt($model->id)]);
 
         }else{
@@ -287,16 +287,17 @@ class HomeController extends Controller
         */
     }
 
-    public function sendemail($email)
+    public function sendemail($model)
     {
         $data = [
-            'to' => $email,
+            'model'=>$model,
+            'to' => $model->email,
             'from' => 'awesome.advertiser@gmail.com',
             'name' => 'Awesome Advertisement',
             'subject' => 'New Ad Placement'
         ];
 
-        Mail::send('welcome', $data, function ($message)  use ($data) {
+        Mail::send('emails.confirmation', $data, function ($message)  use ($data) {
 
             $message->from($data['from'], $data['name']);
 
@@ -304,11 +305,28 @@ class HomeController extends Controller
 
         });
 
-        return "Your email has been sent successfully";
+        //return "Your email has been sent successfully";
     }
 
     public function sendContact(Request $request)
     {
-        dd($request->all());
+        //dd($request->all());
+        $data = [
+            'model'=>$request->all(),
+            'to' => 'wijaya.imd@gmail.com',
+            'from' => 'awesome.advertiser@gmail.com',
+            'name' => 'Awesome Advertisement',
+            'subject' => 'New Message'
+        ];
+
+        Mail::send('emails.messages', $data, function ($message)  use ($data) {
+
+            $message->from($data['from'], $data['name']);
+
+            $message->to($data['to'])->subject($data['subject']);
+
+        });
+
+        return redirect()->back()->with('success','Your message has been sent!');
     }
 }
