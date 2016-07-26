@@ -77,6 +77,9 @@
 <!-- datatables -->
 {!! Helper::registerJs("/master/bower_components/datatables/media/js/jquery.dataTables.min.js") !!}
 
+<!-- datatables tableTools-->
+{!! Helper::registerJs("/master/bower_components/datatables-tabletools/js/dataTables.tableTools.js") !!}
+
 <!-- datatables custom integration -->
 {!! Helper::registerJs("/master/js/custom/datatables_uikit.min.js") !!}
 
@@ -106,14 +109,53 @@
                                 {"name":"price"},
                                 {"name":"description"},
                                 {"name":"created_at"},
-                                {"name":"name","orderable":false,"searchable":false}
-                            ]} );
+                                {"data":"action","name":"action","orderable":false,"searchable":false}
+                            ]} ),
+                            e=new $.fn.dataTable.TableTools(a,{
+                                sSwfPath:"{{ url('/assets/master/bower_components/datatables-tabletools/swf/copy_csv_xls_pdf.swf') }}",
+                                "aButtons": [
+                                    {
+                                        "sExtends": "copy",
+                                        "fnCellRender": function (sValue, iColumn, nTr, iDataIndex) {
+                                            if (iColumn === 4) {
+                                                return '';
+                                            }
+                                            return sValue;
+                                        }
+                                    },
+                                    {
+                                        "sExtends": "xls",
+                                        "fnCellRender": function (sValue, iColumn, nTr, iDataIndex) {
+                                            if (iColumn === 4) {
+                                                return '';
+                                            }
+                                            return sValue;
+                                        }
+                                    },
+                                    {
+                                        "sExtends": "pdf",
+                                        "fnCellRender": function (sValue, iColumn, nTr, iDataIndex) {
+                                            if (iColumn === 4) {
+                                                return '';
+                                            }
+                                            return sValue;
+                                        }
+                                    }
+                                ]
+                            });
                         a.columns().every(function(){
                             var t=this;
                             $("input",this.footer()).on("keyup change",function(){
                                 t.search(this.value).draw()
                             })
-                        })
+                        });
+                        $(e.fnContainer()).insertBefore(t.closest(".dt-uikit").find(".dt-uikit-header")),
+                                $body.on("click",function(t){
+                                    if($body.hasClass("DTTT_Print")&&!$(t.target).closest(".DTTT").length&&!$(t.target).closest(".uk-table").length){
+                                        var a=$.Event("keydown",{keyCode:27});
+                                        $body.trigger(a)
+                                    }
+                                });
                     }
                 }
             };
