@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Jul 2016 pada 07.43
+-- Generation Time: 26 Sep 2016 pada 01.39
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -59,7 +59,9 @@ INSERT INTO `ads` (`id`, `type`, `name`, `phone`, `email`, `issues`, `ad_content
 (8, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'qwe qwe wqe wq wq wqe wq', 7, NULL, 13000, 91000, 'PP', 1, '2016-06-15 12:32:57', '2016-06-15 12:32:57'),
 (9, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 1, 'gfhf fgh gh', 3, NULL, 13000, 39000, 'PP', 1, '2016-06-15 12:37:23', '2016-06-15 12:37:23'),
 (10, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 2, 'tes testest ests tsetssdf sdfsdfsd sdfsdfsdfs', 6, NULL, 13000, 156000, 'PP', 2, '2016-07-14 04:40:04', '2016-07-14 04:41:58'),
-(11, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 3, 'test ads ha ha aha aha aha aha aha aha aha', 11, NULL, 13000, 429000, 'PP', 2, '2016-07-14 04:53:36', '2016-07-14 04:54:09');
+(11, 1, 'Hendra Wijaya', '85737353569', 'wijaya.imd@gmail.com', 3, 'test ads ha ha aha aha aha aha aha aha aha', 11, NULL, 13000, 429000, 'PP', 2, '2016-07-14 04:53:36', '2016-07-14 04:54:09'),
+(12, 4, 'Dian Gendut', '0983376389783', 'anak@ayam.com', 5, 'anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak', 33, NULL, 8000, 1320000, 'PP', 2, '2016-07-24 07:32:01', '2016-07-24 07:32:57'),
+(13, 1, 'Awesome Customer', '0874637373', 'wijaya.imd@gmail.com', 3, 'anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam anak ayam ', 28, NULL, 13000, 1092000, 'PP', 2, '2016-07-24 18:01:45', '2016-07-24 18:03:08');
 
 -- --------------------------------------------------------
 
@@ -83,7 +85,7 @@ INSERT INTO `ads_type` (`id`, `label`, `description`, `created_at`, `updated_at`
 (1, 'BUSINESS & SERVICES', 'Business & Services are for businesses and individuals seeking customers for their services. Business & Services cost Rp 13,000 per word including tax.', '2016-06-14 05:42:33', NULL),
 (2, 'EMPLOYEES WANTED', 'Employment Ads – Employment Wanted are for individuals looking for jobs. All Employment Ads are listed under the header of Bali Advertiser Employment Ads. Employment Ads – Employment Wanted cost Rp 18,000 per word including tax.', '2016-06-14 05:42:51', NULL),
 (3, 'EMPLOYMENT ADS', 'Employment Ads – Employees Wanted are for businesses and individuals looking for workers. All Employment Ads are listed under the header of Bali Advertiser Employment Ads. Employment Ads – Employees Wanted cost Rp 20,000 per word including tax.', '2016-06-14 05:43:21', NULL),
-(4, 'HELLO ADS', 'Hello Ads offer the chance to look for new friends. All ads are grouped together under the header of Hello Ads. Bali Advertiser reserves the right to refuse or edit any ad for publication in the Hello Ads Section. Hello Ads cost Rp 13,000 per word including tax.', '2016-06-14 05:44:02', NULL),
+(4, 'HELLO ADS', 'Hello Ads offer the chance to look for new friends. All ads are grouped together under the header of Hello Ads. Hello Ads cost Rp 7000 per word including tax.', '2016-06-14 05:44:02', '2016-07-24 08:34:34'),
 (5, 'PET PARADE ADS', 'All ads for selling pets are listed under the header of Pet Parade. All ads are grouped in this section either as a line [word] ad or a photo ad. For placing a line ad, please click below. For placing a photo ad please contact us for information. Ads for pets to Give Away, Wanted, Lost or Found are free of charge.', '2016-06-14 05:44:37', NULL);
 
 -- --------------------------------------------------------
@@ -109,7 +111,10 @@ INSERT INTO `design` (`id`, `id_ads`, `image`, `created_at`, `updated_at`) VALUE
 (2, 2, '2liez8sdVtc.jpg', '2016-06-14 23:32:14', '2016-06-14 23:32:14'),
 (3, 2, '2tWpkmqFtcL.jpg', '2016-06-14 23:32:14', '2016-06-14 23:32:14'),
 (4, 3, '36V5kCY64np.jpg', '2016-06-15 00:34:22', '2016-06-15 00:34:22'),
-(5, 10, '1048PrpTYv4H.jpg', '2016-07-14 04:40:04', '2016-07-14 04:40:04');
+(5, 10, '1048PrpTYv4H.jpg', '2016-07-14 04:40:04', '2016-07-14 04:40:04'),
+(6, 12, '12Cm3ejF0DRs.png', '2016-07-24 07:32:01', '2016-07-24 07:32:01'),
+(7, 12, '12kiLOqJth9M.png', '2016-07-24 07:32:01', '2016-07-24 07:32:01'),
+(8, 13, '13OhNJdykvYi.png', '2016-07-24 18:01:45', '2016-07-24 18:01:45');
 
 -- --------------------------------------------------------
 
@@ -164,7 +169,7 @@ CREATE TABLE `price` (
 INSERT INTO `price` (`id`, `type`, `based`, `price`, `created_at`, `updated_at`) VALUES
 (1, 1, 'WC', 13000, '2016-06-14 08:23:06', NULL),
 (2, 3, 'WC', 11000, '2016-07-14 13:37:23', NULL),
-(3, 4, 'WC', 8000, '2016-07-14 13:38:01', NULL);
+(3, 4, 'WC', 7000, '2016-07-14 13:38:01', '2016-07-24 08:34:34');
 
 -- --------------------------------------------------------
 
@@ -188,7 +193,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Administrator', 'admin@mail.com', '$2y$10$0xY.bmLCVURnC8pdZrK2juPaaJsfCn93sdZnVutdVUZQOKOanKMXS', 'FPpYpYqozR8v4oNeC8jKN0D3B3EALcujQ68jAu8cTzjHx1PB5FD6YhRIaflD', '2016-06-11 08:03:00', '2016-06-11 08:04:15'),
-(2, 'Master', 'master@mail.com', '$2y$10$0xY.bmLCVURnC8pdZrK2juPaaJsfCn93sdZnVutdVUZQOKOanKMXS', 'TtCZhtvPwUAubKx5ICRh5V3lodEeZGzNDERf5Y7NWg9qKpHApesrcPwToCBa', '2016-07-14 07:15:59', '2016-07-14 07:16:51');
+(2, 'Master', 'master@mail.com', '$2y$10$K4g5q6xElC3zy6JFJbnc8.8.RxsEdbaPqCS0XzHESiBb/0vWkYm2i', '3mRxNcX7uBmcTRGo2nAVSlQ3ZlaUVyYfNGLsXG3SrUGpAXRVJAOcN2OrtZUC', '2016-07-14 07:15:59', '2016-07-24 08:36:27');
 
 --
 -- Indexes for dumped tables
@@ -240,7 +245,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `ads_type`
 --
@@ -250,7 +255,7 @@ ALTER TABLE `ads_type`
 -- AUTO_INCREMENT for table `design`
 --
 ALTER TABLE `design`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `price`
 --
